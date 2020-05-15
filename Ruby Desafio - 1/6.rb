@@ -12,8 +12,8 @@ elsif
         if(valor-inicial>=conta)
             break
         end
-        conta=conta+conta*0.01
-        valor=valor+valor*rendimento
+        conta+=conta*0.01
+        valor+=valor*rendimento
         prazo=prazo-1
     end
 end

@@ -3,7 +3,7 @@ velas = gets.to_i
 horas=velas
 inicial=velas
 nvela=0
-if(velas<=0)
+if(velas<0)
     puts "Entrada inválida"
     return 0
 end
