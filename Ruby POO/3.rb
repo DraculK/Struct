@@ -25,7 +25,7 @@ class ContaP
 end
 
 class Pessoa
-    attr_accessor :name, :cpf, :telefone, :idade
+    attr_accessor :nome, :cpf, :telefone, :idade
     def ModificarTel
         puts "Digite o novo número de telefone: "
         novotelefone = gets.to_s
@@ -68,15 +68,55 @@ while(option != 6)
     if(option==1)
         if(criarConta==false)
             puts "Não há conta corrente pra ser listada."
-        elsif(criarConta==true)
+            puts "----------------------------------"
+            puts "Escolha a operação a ser realizada: "
+            puts "1. Listar contas correntes."
+            puts "2. Listar contas poupança."
+            puts "3. Criar conta corrente."
+            puts "4. Criar conta poupança."
+            puts "5. Acessar conta."
+            puts "6. Sair."
+            option = gets.to_i
+            while(option<1 || option>6)
+                puts "Operação inválida"
+                puts "1. Listar contas correntes."
+                puts "2. Listar contas poupança."
+                puts "3. Criar conta corrente."
+                puts "4. Criar conta poupança."
+                puts "5. Acessar conta."
+                puts "6. Sair."
+                option = gets.to_i
+            end
+        elsif(criarConta==true && tipo==1)
             pessoa.MostrarConta(pessoa.numeroconta,pessoa.senha)
         end
+
     elsif(option==2)
         if(criarConta==false)
             puts "Não há conta poupança pra ser listada."
-        elsif(criarConta==true)
+            puts "----------------------------------"
+            puts "Escolha a operação a ser realizada: "
+            puts "1. Listar contas correntes."
+            puts "2. Listar contas poupança."
+            puts "3. Criar conta corrente."
+            puts "4. Criar conta poupança."
+            puts "5. Acessar conta."
+            puts "6. Sair."
+            option = gets.to_i
+            while(option<1 || option>6)
+                puts "Operação inválida"
+                puts "1. Listar contas correntes."
+                puts "2. Listar contas poupança."
+                puts "3. Criar conta corrente."
+                puts "4. Criar conta poupança."
+                puts "5. Acessar conta."
+                puts "6. Sair."
+                option = gets.to_i
+            end
+        elsif(criarConta==true && tipo==2)
             pessoa.MostrarConta(pessoa.numeroconta,pessoa.senha)
         end
+
     elsif(option==3)
         puts("----CONTA CORRENTE----")
         pessoa = Pessoa.new
@@ -89,14 +129,34 @@ while(option != 6)
         pessoa.telefone = gets.to_s
         puts "Digite sua idade: "
         pessoa.idade = gets.to_i
-        puts "Digite quando quer botar na sua conta: "
+        puts "Digite quanto quer botar na sua conta: "
         conta.saldo = gets.to_f
         puts "Digite o número que quer na sua conta: "
         conta.numeroconta = gets.to_s
         puts "Digite a senha da sua conta: "
         conta.senha = gets.to_i
         tipo=1
-        criarConta==true
+        criarConta=true
+        puts "----------------------------------"
+        puts "Escolha a operação a ser realizada: "
+        puts "1. Listar contas correntes."
+        puts "2. Listar contas poupança."
+        puts "3. Criar conta corrente."
+        puts "4. Criar conta poupança."
+        puts "5. Acessar conta."
+        puts "6. Sair."
+        option = gets.to_i
+        while(option<1 || option>6)
+            puts "Operação inválida"
+            puts "1. Listar contas correntes."
+            puts "2. Listar contas poupança."
+            puts "3. Criar conta corrente."
+            puts "4. Criar conta poupança."
+            puts "5. Acessar conta."
+            puts "6. Sair."
+            option = gets.to_i
+        end
+
     elsif(option==4)
         puts("----CONTA POUPANÇA----")
         pessoa = Pessoa.new
@@ -109,14 +169,34 @@ while(option != 6)
         pessoa.telefone = gets.to_s
         puts "Digite sua idade: "
         pessoa.idade = gets.to_i
-        puts "Digite quando quer botar na sua conta: "
+        puts "Digite quanto quer botar na sua conta: "
         conta.saldo = gets.to_f
         puts "Digite o número que quer na sua conta: "
         conta.numeroconta = gets.to_s
         puts "Digite a senha da sua conta: "
         conta.senha = gets.to_i
         tipo=2
-        criarConta==true
+        criarConta=true
+        puts "----------------------------------"
+        puts "Escolha a operação a ser realizada: "
+        puts "1. Listar contas correntes."
+        puts "2. Listar contas poupança."
+        puts "3. Criar conta corrente."
+        puts "4. Criar conta poupança."
+        puts "5. Acessar conta."
+        puts "6. Sair."
+        option = gets.to_i
+        while(option<1 || option>6)
+            puts "Operação inválida"
+            puts "1. Listar contas correntes."
+            puts "2. Listar contas poupança."
+            puts "3. Criar conta corrente."
+            puts "4. Criar conta poupança."
+            puts "5. Acessar conta."
+            puts "6. Sair."
+            option = gets.to_i
+        end
+
     elsif(option==5)
         if(criarConta==false)
             puts "Não há conta para ser acessada."
@@ -147,6 +227,7 @@ while(option != 6)
                 opt = gets.to_i
             end
         end
+
     elsif(option==6)
         return 0
     end
