@@ -68,6 +68,7 @@ class ContaC < Pessoa
 end
 
 contaEx = ContaP.new("Ramón Valdés", "000.000.000-00", "4002-8922", 65, 100000, "1234 013 12345678-9", "4321")
+contaEX1 = ContaC.new("Hayao Miyazaki", "111.111.111-11", "9519-9519", 79, 60000, "1234 013 12345678-0", "1234")
 # contaEx1 = ContaC.new("Ramón Valdés", "000.000.000-00", "4002-8922", 65, 100000, "1234 013 12345678-9", "4321")
 # puts contaEx.nome
 # puts contaEx.cpf
@@ -76,7 +77,7 @@ contaEx = ContaP.new("Ramón Valdés", "000.000.000-00", "4002-8922", 65, 100000
 # puts contaEx.saldo
 # puts contaEx.numero
 # puts contaEx.senha
-i=0
+i=1
 nomecorrente = []
 cpfcorrente = []
 telefonecorrente = []
@@ -157,17 +158,17 @@ while(option!=6)
     elsif(option==3)
         puts "CRIAÇÃO DE CONTA CORRENTE"
         puts "Digite o seu nome: "
-        nomecorrente[i]=gets.to_s
+        nomecorrente[i]=gets.to_s.strip
         puts "Digite o seu cpf: "
-        cpfcorrente[i]=gets.to_s
+        cpfcorrente[i]=gets.to_s.strip
         puts "Digite o seu telefone: "
-        telefonecorrente[i]=gets.to_s
+        telefonecorrente[i]=gets.to_s.strip
         puts "Digite a sua idade: "
         idadecorrente[i]=gets.to_i
         puts "Digite o valor que será colocado na conta: "
         saldocorrente[i]=gets.to_i
         puts "Digite o número da sua conta: "
-        numerocorrente[i]=gets.to_s
+        numerocorrente[i]=gets.to_s.strip
         puts "Digite uma senha para a conta: "
         senhacorrente[i]=gets.to_i
         ContaC.new(nomecorrente[i],cpfcorrente[i],telefonecorrente[i],idadecorrente[i],saldocorrente[i],numerocorrente[i],senhacorrente[i])
@@ -194,17 +195,17 @@ while(option!=6)
     elsif(option==4)
         puts "CRIAÇÃO DE CONTA POUPANÇA"
         puts "Digite o seu nome: "
-        nomepoupanca[f]=gets.to_s
+        nomepoupanca[f]=gets.to_s.strip
         puts "Digite o seu cpf: "
-        cpfpoupanca[f]=gets.to_s
+        cpfpoupanca[f]=gets.to_s.strip
         puts "Digite o seu telefone: "
-        telefonepoupanca[f]=gets.to_s
+        telefonepoupanca[f]=gets.to_s.strip
         puts "Digite a sua idade: "
         idadepoupanca[f]=gets.to_i
         puts "Digite o valor que será colocado na conta: "
         saldopoupanca[f]=gets.to_i
         puts "Digite o número da sua conta: "
-        numeropoupanca[f]=gets.to_s
+        numeropoupanca[f]=gets.to_s.strip
         puts "Digite uma senha para a conta: "
         senhapoupanca[f]=gets.to_i
         ContaP.new(nomepoupanca[f],cpfpoupanca[f],telefonepoupanca[f],idadepoupanca[f],saldopoupanca[f],numeropoupanca[f],senhapoupanca[f])
