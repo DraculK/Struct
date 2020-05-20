@@ -347,6 +347,7 @@ while(option!=6)
                         option = gets.to_i
                     elsif(option==7)
                         return 0
+                    end
                 end
             elsif
                 for d in 0..f+1 
@@ -370,86 +371,6 @@ while(option!=6)
                             puts "6. Exibir dados da conta"
                             puts "7. Sair"
                             option = gets.to_i
-                        end
-                        while(option!=7)
-                            if(option==1)
-                                puts
-                                puts "Quando deseja depositar?"
-                                num = gets.to_i
-                                conta.Depositar(num)
-                                puts
-                                puts "1. Depositar"
-                                puts "2. Sacar"
-                                puts "3. Exibir saldo"
-                                puts "4. Modificar telefone"
-                                puts "5. Exibir dados pessoais"
-                                puts "6. Exibir dados da conta"
-                                puts "7. Sair"
-                                option = gets.to_i
-                            elsif(option==2)
-                                puts
-                                puts "Quando deseja sacar?"
-                                num = gets.to_i
-                                conta.Sacar(num)
-                                puts
-                                puts "1. Depositar"
-                                puts "2. Sacar"
-                                puts "3. Exibir saldo"
-                                puts "4. Modificar telefone"
-                                puts "5. Exibir dados pessoais"
-                                puts "6. Exibir dados da conta"
-                                puts "7. Sair"
-                                option = gets.to_i
-                            elsif(option==3)
-                                puts
-                                conta.Saldo
-                                puts
-                                puts "1. Depositar"
-                                puts "2. Sacar"
-                                puts "3. Exibir saldo"
-                                puts "4. Modificar telefone"
-                                puts "5. Exibir dados pessoais"
-                                puts "6. Exibir dados da conta"
-                                puts "7. Sair"
-                                option = gets.to_i
-                            elsif(option==4)
-                                puts
-                                conta.ModificarTel
-                                puts
-                                puts "1. Depositar"
-                                puts "2. Sacar"
-                                puts "3. Exibir saldo"
-                                puts "4. Modificar telefone"
-                                puts "5. Exibir dados pessoais"
-                                puts "6. Exibir dados da conta"
-                                puts "7. Sair"
-                                option = gets.to_i
-                            elsif(option==5)
-                                puts
-                                conta.MostrarPessoal(conta.nome,conta.cpf,conta.telefone,conta.idade)
-                                puts
-                                puts "1. Depositar"
-                                puts "2. Sacar"
-                                puts "3. Exibir saldo"
-                                puts "4. Modificar telefone"
-                                puts "5. Exibir dados pessoais"
-                                puts "6. Exibir dados da conta"
-                                puts "7. Sair"
-                                option = gets.to_i
-                            elsif(option==6)
-                                puts
-                                conta.MostrarConta(conta.numeroconta,conta.senha)
-                                puts
-                                puts "1. Depositar"
-                                puts "2. Sacar"
-                                puts "3. Exibir saldo"
-                                puts "4. Modificar telefone"
-                                puts "5. Exibir dados pessoais"
-                                puts "6. Exibir dados da conta"
-                                puts "7. Sair"
-                                option = gets.to_i
-                            elsif(option==7)
-                                return 0
                         end
                     elsif(d>f)
                         puts "Não há conta com esse CPF"
