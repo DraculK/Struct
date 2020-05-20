@@ -84,7 +84,7 @@ idadecorrente = []
 saldocorrente = []
 numerocorrente = []
 senhacorrente = []
-f=0
+f=1
 nomepoupanca = []
 cpfpoupanca = []
 telefonepoupanca = []
@@ -228,7 +228,27 @@ while(option!=6)
             puts "6. Sair"
             option = gets.to_i
         end
-    if(option==5)
-        
+    elsif(option==5)
+        puts "Você quer acessar que tipo de conta? "
+        puts "1. Corrente."
+        puts "2. Poupança."
+        tipo=gets.to_i
+        while(tipo<1 || tipo>2)
+            puts "Operação inválida"
+            puts "Você quer acessar que tipo de conta? "
+            puts "1. Corrente."
+            puts "2. Poupança."
+            tipo=gets.to_i
+        end
+        if(tipo==1)
+            puts "Escolha a conta: "
+            print ContaC.corrente.map {|corrente| [corrente.nome,corrente.cpf,corrente.telefone,corrente.idade,corrente.saldo,corrente.numero,corrente.senha]}
+        elsif(tipo==2)
+            puts "Escolha a conta: "
+            print ContaP.poupanca.map {|poupanca| [poupanca.nome,poupanca.cpf,poupanca.telefone,poupanca.idade,poupanca.saldo,poupanca.numero,poupanca.senha]}
+            break
+        end
+    elsif(option==6)
+        return 0
     end
 end
