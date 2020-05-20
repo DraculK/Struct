@@ -228,5 +228,7 @@ while(option!=6)
             puts "6. Sair"
             option = gets.to_i
         end
+    if(option==5)
+        
     end
 end
