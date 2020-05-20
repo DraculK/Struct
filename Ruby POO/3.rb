@@ -380,9 +380,12 @@ while(option!=6)
                             puts "7. Sair"
                             option = gets.to_i
                         elsif(option==7)
+                            break
                             return 0
                         end
                     end
+                elsif(option==7)
+                    return 0
                 elsif(d>i && option!=7)
                     puts "Não há conta com esse CPF"
                     break;
