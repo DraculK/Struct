@@ -21,7 +21,25 @@ class ContaP < Pessoa
     end
 
     attr_reader :saldo, :numero, :senha
-
+    def Saldo
+        puts "Seu saldo atual é: #{saldo}"
+    end
+    def ModificarTel
+        puts "Digite o novo número de telefone: "
+        novotelefone = gets.to_s
+        @telefone=novotelefone
+        puts "Seu novo número de telefone é: #{@telefone}"
+    end
+    def MostrarPessoal(nome,cpf,telefone,idade)
+        puts "Nome: #{nome}"
+        puts "CPF: #{cpf}"
+        puts "Telefone: #{telefone}"
+        puts "Idade: #{idade}"
+    end
+    def MostrarConta(numeroconta,senha)
+        puts "Número da conta: #{numeroconta}"
+        puts "Senha: #{senha}"
+    end
     def Depositar(num)
         @saldo = @saldo+num
         puts "Você conseguiu depositar: #{num}"
@@ -77,7 +95,7 @@ contaEX1 = ContaC.new("Hayao Miyazaki", "111.111.111-11", "9519-9519", 79, 60000
 # puts contaEx.saldo
 # puts contaEx.numero
 # puts contaEx.senha
-i=1
+i=0
 nomecorrente = []
 cpfcorrente = []
 telefonecorrente = []
@@ -85,7 +103,7 @@ idadecorrente = []
 saldocorrente = []
 numerocorrente = []
 senhacorrente = []
-f=1
+f=0
 nomepoupanca = []
 cpfpoupanca = []
 telefonepoupanca = []
@@ -273,7 +291,7 @@ while(option!=6)
                         puts
                         puts "Quando deseja depositar?"
                         num = gets.to_i
-                        conta.Depositar(num)
+                        contaEx.Depositar(num)
                         puts
                         puts "1. Depositar"
                         puts "2. Sacar"
@@ -287,7 +305,7 @@ while(option!=6)
                         puts
                         puts "Quando deseja sacar?"
                         num = gets.to_i
-                        conta.Sacar(num)
+                        contaEx.Sacar(num)
                         puts
                         puts "1. Depositar"
                         puts "2. Sacar"
@@ -299,7 +317,7 @@ while(option!=6)
                         option = gets.to_i
                     elsif(option==3)
                         puts
-                        conta.Saldo
+                        contaEx.Saldo
                         puts
                         puts "1. Depositar"
                         puts "2. Sacar"
@@ -311,7 +329,7 @@ while(option!=6)
                         option = gets.to_i
                     elsif(option==4)
                         puts
-                        conta.ModificarTel
+                        contaEx.ModificarTel
                         puts
                         puts "1. Depositar"
                         puts "2. Sacar"
@@ -323,7 +341,7 @@ while(option!=6)
                         option = gets.to_i
                     elsif(option==5)
                         puts
-                        conta.MostrarPessoal(conta.nome,conta.cpf,conta.telefone,conta.idade)
+                        contaEx.MostrarPessoal(contaEx.nome,contaEx.cpf,contaEx.telefone,contaEx.idade)
                         puts
                         puts "1. Depositar"
                         puts "2. Sacar"
@@ -335,7 +353,7 @@ while(option!=6)
                         option = gets.to_i
                     elsif(option==6)
                         puts
-                        conta.MostrarConta(conta.numeroconta,conta.senha)
+                        contaEx.MostrarConta(contaEx.numero,contaEx.senha)
                         puts
                         puts "1. Depositar"
                         puts "2. Sacar"
