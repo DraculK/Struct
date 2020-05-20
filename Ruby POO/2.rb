@@ -1,11 +1,13 @@
 #Exercício - 2
 class Conta
     attr_accessor :nome, :cpf, :telefone, :idade, :saldo, :numeroconta, :senha
-    def Depositar
-        puts "Depositando.."
+    def Depositar(num)
+        @saldo = @saldo+num
+        puts "Sua conta agora tem: #{@saldo}"
     end
-    def Sacar
-        puts "Sacando.."
+    def Sacar(num)
+        @saldo = @saldo-num
+        puts "Sua conta agora tem: #{@saldo}" 
     end
     def Saldo
         puts "Seu saldo atual é: #{saldo}"
@@ -60,7 +62,9 @@ end
 while(option!=7)
     if(option==1)
         puts
-        conta.Depositar
+        puts "Quando deseja depositar?"
+        num = gets.to_i
+        conta.Depositar(num)
         puts
         puts "1. Depositar"
         puts "2. Sacar"
@@ -72,7 +76,9 @@ while(option!=7)
         option = gets.to_i
     elsif(option==2)
         puts
-        conta.Sacar
+        puts "Quando deseja sacar?"
+        num = gets.to_i
+        conta.Sacar(num)
         puts
         puts "1. Depositar"
         puts "2. Sacar"

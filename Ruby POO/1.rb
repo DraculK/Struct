@@ -1,11 +1,13 @@
 #Exercício - 1
 class Conta
     attr_accessor :nome, :cpf, :telefone, :idade, :saldo, :numeroconta, :senha
-    def Depositar
-        puts "Depositando.."
+    def Depositar(num)
+        @saldo = @saldo+num
+        puts "Sua conta agora tem: #{@saldo}"
     end
-    def Sacar
-        puts "Sacando.."
+    def Sacar(num)
+        @saldo = @saldo-num
+        puts "Sua conta agora tem: #{@saldo}" 
     end
     def Saldo
         puts "Seu saldo atual é: #{saldo}"
@@ -37,8 +39,8 @@ conta.saldo = 100000
 conta.numeroconta = "1234 013 12345678-9"
 conta.senha = "4321"
 
-conta.Depositar
-conta.Sacar
+conta.Depositar(15)
+conta.Sacar(10)
 conta.Saldo
 conta.ModificarTel
 conta.MostrarPessoal(conta.nome,conta.cpf,conta.telefone,conta.idade)
