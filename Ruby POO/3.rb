@@ -1,4 +1,5 @@
 #Exercício - 3
+#Esse exercício ficou horrível, mas esse foi o único jeito que "consegui".
 class Pessoa
     def initialize(nome,cpf,telefone,idade)
         @nome = nome
