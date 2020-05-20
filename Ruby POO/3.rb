@@ -76,7 +76,22 @@ contaEx = ContaP.new("Ramón Valdés", "000.000.000-00", "4002-8922", 65, 100000
 # puts contaEx.saldo
 # puts contaEx.numero
 # puts contaEx.senha
-
+i=0
+nomecorrente = []
+cpfcorrente = []
+telefonecorrente = []
+idadecorrente = []
+saldocorrente = []
+numerocorrente = []
+senhacorrente = []
+f=0
+nomepoupanca = []
+cpfpoupanca = []
+telefonepoupanca = []
+idadepoupanca = []
+saldopoupanca = []
+numeropoupanca = []
+senhapoupanca = []
 puts "1. Listar contas correntes."
 puts "2. Listas contas poupanças."
 puts "3. Criar conta corrente"
@@ -120,6 +135,80 @@ while(option!=6)
         end
     elsif(option==2)
         print ContaP.poupanca.map {|poupanca| [poupanca.nome,poupanca.cpf,poupanca.telefone,poupanca.idade,poupanca.saldo,poupanca.numero,poupanca.senha]}
+        puts "-------------------"
+        puts "1. Listar contas correntes."
+        puts "2. Listas contas poupanças."
+        puts "3. Criar conta corrente"
+        puts "4. Criar conta poupança"
+        puts "5. Acessar conta"
+        puts "6. Sair"
+        option = gets.to_i
+        while(option<1 || option>6)
+            puts "-------------------"
+            puts "Entrada inválida"
+            puts "1. Listar contas correntes."
+            puts "2. Listas contas poupanças."
+            puts "3. Criar conta corrente"
+            puts "4. Criar conta poupança"
+            puts "5. Acessar conta"
+            puts "6. Sair"
+            option = gets.to_i
+        end
+    elsif(option==3)
+        puts "CRIAÇÃO DE CONTA CORRENTE"
+        puts "Digite o seu nome: "
+        nomecorrente[i]=gets.to_s
+        puts "Digite o seu cpf: "
+        cpfcorrente[i]=gets.to_s
+        puts "Digite o seu telefone: "
+        telefonecorrente[i]=gets.to_s
+        puts "Digite a sua idade: "
+        idadecorrente[i]=gets.to_i
+        puts "Digite o valor que será colocado na conta: "
+        saldocorrente[i]=gets.to_i
+        puts "Digite o número da sua conta: "
+        numerocorrente[i]=gets.to_s
+        puts "Digite uma senha para a conta: "
+        senhacorrente[i]=gets.to_i
+        ContaC.new(nomecorrente[i],cpfcorrente[i],telefonecorrente[i],idadecorrente[i],saldocorrente[i],numerocorrente[i],senhacorrente[i])
+        i+=1
+        puts "-------------------"
+        puts "1. Listar contas correntes."
+        puts "2. Listas contas poupanças."
+        puts "3. Criar conta corrente"
+        puts "4. Criar conta poupança"
+        puts "5. Acessar conta"
+        puts "6. Sair"
+        option = gets.to_i
+        while(option<1 || option>6)
+            puts "-------------------"
+            puts "Entrada inválida"
+            puts "1. Listar contas correntes."
+            puts "2. Listas contas poupanças."
+            puts "3. Criar conta corrente"
+            puts "4. Criar conta poupança"
+            puts "5. Acessar conta"
+            puts "6. Sair"
+            option = gets.to_i
+        end
+    elsif(option==4)
+        puts "CRIAÇÃO DE CONTA POUPANÇA"
+        puts "Digite o seu nome: "
+        nomepoupanca[f]=gets.to_s
+        puts "Digite o seu cpf: "
+        cpfpoupanca[f]=gets.to_s
+        puts "Digite o seu telefone: "
+        telefonepoupanca[f]=gets.to_s
+        puts "Digite a sua idade: "
+        idadepoupanca[f]=gets.to_i
+        puts "Digite o valor que será colocado na conta: "
+        saldopoupanca[f]=gets.to_i
+        puts "Digite o número da sua conta: "
+        numeropoupanca[f]=gets.to_s
+        puts "Digite uma senha para a conta: "
+        senhapoupanca[f]=gets.to_i
+        ContaP.new(nomepoupanca[f],cpfpoupanca[f],telefonepoupanca[f],idadepoupanca[f],saldopoupanca[f],numeropoupanca[f],senhapoupanca[f])
+        f+=1
         puts "-------------------"
         puts "1. Listar contas correntes."
         puts "2. Listas contas poupanças."
