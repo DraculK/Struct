@@ -115,6 +115,7 @@ contaEx = ContaP.new("Ramón Valdés", "000.000.000-00", "4002-8922", 65, 100000
 # puts contaEx.numero
 # puts contaEx.senha
 i=0
+cc = []
 nomecorrente = []
 cpfcorrente = []
 telefonecorrente = []
@@ -123,6 +124,7 @@ saldocorrente = []
 numerocorrente = []
 senhacorrente = []
 f=0
+pp = []
 nomepoupanca = []
 cpfpoupanca = []
 telefonepoupanca = []
@@ -208,7 +210,7 @@ while(option!=6)
         numerocorrente[i]=gets.to_s.strip
         puts "Digite uma senha para a conta: "
         senhacorrente[i]=gets.to_i
-        cc = ContaC.new(nomecorrente[i],cpfcorrente[i],telefonecorrente[i],idadecorrente[i],saldocorrente[i],numerocorrente[i],senhacorrente[i])
+        cc[i] = ContaC.new(nomecorrente[i],cpfcorrente[i],telefonecorrente[i],idadecorrente[i],saldocorrente[i],numerocorrente[i],senhacorrente[i])
         i+=1
         puts "-------------------"
         puts "1. Listar contas correntes."
@@ -245,7 +247,7 @@ while(option!=6)
         numeropoupanca[f]=gets.to_s.strip
         puts "Digite uma senha para a conta: "
         senhapoupanca[f]=gets.to_i
-        pp = ContaP.new(nomepoupanca[f],cpfpoupanca[f],telefonepoupanca[f],idadepoupanca[f],saldopoupanca[f],numeropoupanca[f],senhapoupanca[f])
+        pp[f] = ContaP.new(nomepoupanca[f],cpfpoupanca[f],telefonepoupanca[f],idadepoupanca[f],saldopoupanca[f],numeropoupanca[f],senhapoupanca[f])
         f+=1
         puts "-------------------"
         puts "1. Listar contas correntes."
@@ -308,7 +310,7 @@ while(option!=6)
                             puts
                             puts "Quando deseja depositar?"
                             num = gets.to_i
-                            cc.Depositar(num)
+                            cc[d].Depositar(num)
                             puts
                             puts "1. Depositar"
                             puts "2. Sacar"
@@ -322,7 +324,7 @@ while(option!=6)
                             puts
                             puts "Quando deseja sacar?"
                             num = gets.to_i
-                            cc.Sacar(num)
+                            cc[d].Sacar(num)
                             puts
                             puts "1. Depositar"
                             puts "2. Sacar"
@@ -334,7 +336,7 @@ while(option!=6)
                             option = gets.to_i
                         elsif(option==3)
                             puts
-                            cc.Saldo
+                            cc[d].Saldo
                             puts
                             puts "1. Depositar"
                             puts "2. Sacar"
@@ -346,7 +348,7 @@ while(option!=6)
                             option = gets.to_i
                         elsif(option==4)
                             puts
-                            cc.ModificarTel
+                            cc[d].ModificarTel
                             puts
                             puts "1. Depositar"
                             puts "2. Sacar"
@@ -358,7 +360,7 @@ while(option!=6)
                             option = gets.to_i
                         elsif(option==5)
                             puts
-                            cc.MostrarPessoal(cc.nome,cc.cpf,cc.telefone,cc.idade)
+                            cc[d].MostrarPessoal(cc[d].nome,cc[d].cpf,cc[d].telefone,cc[d].idade)
                             puts
                             puts "1. Depositar"
                             puts "2. Sacar"
@@ -370,7 +372,7 @@ while(option!=6)
                             option = gets.to_i
                         elsif(option==6)
                             puts
-                            cc.MostrarConta(cc.numero,cc.senha)
+                            cc[d].MostrarConta(cc[d].numero,cc[d].senha)
                             puts
                             puts "1. Depositar"
                             puts "2. Sacar"
@@ -527,7 +529,7 @@ while(option!=6)
                                 puts
                                 puts "Quando deseja depositar?"
                                 num = gets.to_i
-                                pp.Depositar(num)
+                                pp[d].Depositar(num)
                                 puts
                                 puts "1. Depositar"
                                 puts "2. Sacar"
@@ -541,7 +543,7 @@ while(option!=6)
                                 puts
                                 puts "Quando deseja sacar?"
                                 num = gets.to_i
-                                pp.Sacar(num)
+                                pp[d].Sacar(num)
                                 puts
                                 puts "1. Depositar"
                                 puts "2. Sacar"
@@ -553,7 +555,7 @@ while(option!=6)
                                 option = gets.to_i
                             elsif(option==3)
                                 puts
-                                pp.Saldo
+                                pp[d].Saldo
                                 puts
                                 puts "1. Depositar"
                                 puts "2. Sacar"
@@ -565,7 +567,7 @@ while(option!=6)
                                 option = gets.to_i
                             elsif(option==4)
                                 puts
-                                pp.ModificarTel
+                                pp[d].ModificarTel
                                 puts
                                 puts "1. Depositar"
                                 puts "2. Sacar"
@@ -577,7 +579,7 @@ while(option!=6)
                                 option = gets.to_i
                             elsif(option==5)
                                 puts
-                                pp.MostrarPessoal(pp.nome,pp.cpf,pp.telefone,pp.idade)
+                                pp[d].MostrarPessoal(pp[d].nome,pp[d].cpf,pp[d].telefone,pp[d].idade)
                                 puts
                                 puts "1. Depositar"
                                 puts "2. Sacar"
@@ -589,7 +591,7 @@ while(option!=6)
                                 option = gets.to_i
                             elsif(option==6)
                                 puts
-                                pp.MostrarConta(pp.numero,pp.senha)
+                                pp[d].MostrarConta(pp[d].numero,pp[d].senha)
                                 puts
                                 puts "1. Depositar"
                                 puts "2. Sacar"
