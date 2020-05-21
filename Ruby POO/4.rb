@@ -21,7 +21,12 @@ while qtdTurmas<1 || qtdTurmas>10
 end
 turmas = []
 materias = ["Cálculo 1", "Cálculo 2", "Cálculo 3", "Física 1", "Física 2", "Estruturas de Dados", "Algoritmos e Programação de Computadores", "Técnicas de Programação 1", "Sistemas Digitais", "Eletromagnetismo"]
-
 qtdTurmas.times do 
     turmas<<Turma.new()
 end
+i=0
+while i!=qtdTurmas
+    turmas[i].materia=materias[i]
+    i+=1
+end
+ 
