@@ -35,3 +35,7 @@ while x!=qtdTurmas
     alunos[x]=rand(5..20)
     x+=1
 end
+totalAlunos=0
+for i in 0..qtdTurmas
+totalAlunos+=alunos[i].to_i
+end
