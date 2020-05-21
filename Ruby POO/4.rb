@@ -42,13 +42,34 @@ for i in 0..qtdTurmas
     totalAlunos+=alunos[i].to_i
 end
 passou=0
-for i in 0..totalAlunos
-    notas[i]=rand(0..10)
-    if notas[i]>=5
-        passou+=1
+f=0
+while f!=qtdTurmas
+    for i in 0..alunos[f]
+        notas[i]=rand(0..10)
+        if notas[i]>=5
+            passou+=1
+        end
     end
+    aprovadoDisc[f]=passou
+    f+=1
+    passou = 0
 end
-x=passou.to_f
-y=totalAlunos.to_f
-porctotal=(x/y*100).round(2)
-puts "Porcentagem total de aprovados: #{porctotal}"
+notaTotal=0
+# for i in 0..totalAlunos
+#     notas[i]=rand(0..10)
+#     if notas[i]>=5
+#         passou+=1
+#     end
+# end
+# x=passou.to_f
+# y=totalAlunos.to_f
+# porctotal=(x/y*100).round(2)
+# puts "Porcentagem total de aprovados: #{porctotal}"
+aprovadosTotal=0
+for i in 0..qtdTurmas-1
+    x=(aprovadoDisc[i].to_f/alunos[i]*100).round(2)
+    puts "Na matéria "+materias[i]+", foram aprovados #{x}%"
+    aprovadosTotal+=aprovadoDisc[i]
+end
+y=(aprovadosTotal.to_f/totalAlunos.to_f*100).round(2)
+puts "No total, foram aprovados #{y}%"
