@@ -21,6 +21,8 @@ while qtdTurmas<1 || qtdTurmas>10
 end
 turmas = []
 alunos = []
+aprovadoDisc = []
+notas = []
 materias = ["Cálculo 1", "Cálculo 2", "Cálculo 3", "Física 1", "Física 2", "Estruturas de Dados", "Algoritmos e Programação de Computadores", "Técnicas de Programação 1", "Sistemas Digitais", "Eletromagnetismo"]
 qtdTurmas.times do 
     turmas<<Turma.new()
@@ -37,5 +39,16 @@ while x!=qtdTurmas
 end
 totalAlunos=0
 for i in 0..qtdTurmas
-totalAlunos+=alunos[i].to_i
+    totalAlunos+=alunos[i].to_i
 end
+passou=0
+for i in 0..totalAlunos
+    notas[i]=rand(0..10)
+    if notas[i]>=5
+        passou+=1
+    end
+end
+x=passou.to_f
+y=totalAlunos.to_f
+porctotal=(x/y*100).round(2)
+puts "Porcentagem total de aprovados: #{porctotal}"
