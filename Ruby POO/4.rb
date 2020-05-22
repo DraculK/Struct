@@ -43,9 +43,13 @@ for i in 0..qtdTurmas
 end
 passou=0
 f=0
+for i in 0..qtdTurmas-1
+    puts "A turma de "+materias[i]+" tem #{alunos[i]} alunos"
+end
 while f!=qtdTurmas
-    for i in 0..alunos[f]
-        notas[i]=rand(0..10)
+    for i in 0..alunos[f]-1
+        puts "Digite as notas do aluno #{[i+1]} em "+materias[f]
+        notas[i]=gets.to_f
         if notas[i]>=5
             passou+=1
         end
