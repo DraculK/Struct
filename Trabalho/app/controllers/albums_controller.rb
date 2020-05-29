@@ -39,7 +39,7 @@ class AlbumsController < ApplicationController
     private
         def album_params
     params.require(:album).permit(:name, :artist)
-  end
+        end
 
   def current_album
     @album = Album.find(params[:id])

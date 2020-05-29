@@ -1,0 +1,10 @@
+<table>
+  <% @musics.each do |music| %>
+    <tr>
+      <td><%= link_to music.name, music_path(music) %></td>
+      <td><%= button_to 'Edit', edit_music_path(music), method: 'get'%></td>
+      <td><%= button_to 'Remove', music_path(music), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</table>
+<%= link_to "Add a music", new_music_path %>
+<p> <%= link_to "Go to Albums", albums_path %> </p>
