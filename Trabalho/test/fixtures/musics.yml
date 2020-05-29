@@ -3,9 +3,11 @@
 one:
   name: MyString
   explicit: false
+  album: one
   genre: MyString
 
 two:
   name: MyString
   explicit: false
+  album: two
   genre: MyString

@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Album.create(name: "Famous Monsters",artist: "Misfits")
-Music.create(name: "Astro Zombies",explicit: true,genre: "Rock")
-Album.create(name: "God Save the Queen",artist: "Sex Pistols")
-Music.create(name: "Pretty Vacant",explicit: true,genre: "Punk")
+a1 = Album.create(name: "Famous Monsters", artist: "Misfits")
+
+a2 = Album.create(name: "N.W.A. and the Posse", artist: "Eazy-E")
+
+Music.create(name: "Astro Zombies", album: a1, genre:"Rock")
+
+Music.create(name: "Boyz-n-the-Hood", album: a2, genre:"Rap")

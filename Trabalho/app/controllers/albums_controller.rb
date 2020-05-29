@@ -44,4 +44,5 @@ class AlbumsController < ApplicationController
   def current_album
     @album = Album.find(params[:id])
   end
+  
 end
