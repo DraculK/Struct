@@ -1,24 +1,5 @@
-# README
+# SOBRE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Trabalho feito com a ajuda do Eduardo, pois tive muita dificuldade 
+* Usei o site: https://blog.usejournal.com/lets-build-taskbot-a-simple-crud-app-using-ruby-on-rails-part-1-a9710097c1c3 para tentar me localizar melhor
