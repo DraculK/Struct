@@ -1,0 +1,18 @@
+#titulo{
+    background-color: hotpink;
+    color: green;
+}
+
+p{
+    color: red;
+}
+ul{
+    color: blue;
+    list-style-type: none;
+}
+.palavraroxa{
+    color: purple;
+}
+.paddinglista{
+    padding-top: 70px;
+}
