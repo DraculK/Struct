@@ -1,0 +1,47 @@
+body{
+    font-family: arial, 'Times New Roman';
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 30;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    padding-right: 35px;
+    color: white;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.principal{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 2em;
+    color: white;
+}
+
+#ak{
+    background-image: url("ar15.jpg");
+    background-size: cover;
+}
+
+.column{
+    padding-top: 200px;
+    color: white;
+    margin-left: 80px;
+}
+
+.img{
+    max-width: 100%;
+    height: auto;
+}

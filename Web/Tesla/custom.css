@@ -8,6 +8,10 @@ body{
     padding: 0;
 }
 
+body{
+    font-family: arial, "Times New Roman";
+}
+
 nav > img{
     margin-top: 20px;
     margin-left: 20px;
@@ -37,6 +41,7 @@ nav ul a:hover{
     color:grey;
 }
 
-body{
-    font-family: arial, "Times New Roman";
+#rightmenu ul li{
+    display: block;
+    float: right;
 }
