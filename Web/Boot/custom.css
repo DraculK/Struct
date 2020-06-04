@@ -1,5 +1,7 @@
 body{
     font-family: arial, 'Times New Roman';
+    margin: 0 auto;
+    text-align: center;
 }
 
 ul {
@@ -38,10 +40,35 @@ li a {
 .column{
     padding-top: 200px;
     color: white;
-    margin-left: 80px;
+    margin-left: 40px;
+}
+.column1{
+    padding-top: 350px;
+    color: white;
+    margin-left: 0px;
 }
 
 .img{
     max-width: 100%;
     height: auto;
 }
+
+.transbutton{
+    color: white;
+    display:block;
+    border-radius: 20px;
+    background-color: transparent;
+    border:5px solid white;
+    float: center;
+    width: 150px;
+    height: 40;
+    line-height: 40px;
+    text-align: center;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    body {
+      background: #999;
+      width: 100%;
+    }
+  }
