@@ -1,0 +1,24 @@
+<table>
+  <% @musics.each do |music| %>
+    <tr>
+      <td><%= link_to music.name, music_path(music) %></td>
+      <td><%= button_to 'Edit', edit_music_path(music), method: 'get'%></td>
+      <td><%= button_to 'Remove', music_path(music), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      <button id= "color">Change color!</button>
+<script>
+document.getElementById('color').onclick = changeColor; 
+var currentColor = "red";
+function changeColor() { 
+        if(currentColor == "red"){ 
+           document.body.style.color = "green";
+           currentColor = "green";
+        } else {
+           document.body.style.color = "red";
+           currentColor = "red";
+        } 
+    }
+</script>
+  <% end %>
+</table>
+<%= link_to "Add a music", new_music_path %>
+<p> <%= link_to "Go to Albums", albums_path %> </p>
