@@ -1,9 +1,26 @@
 <table>
   <% @albums.each do |album| %>
     <tr>
-      <td><%= link_to album.name, album_path(album) %></td>
+      <td id="<%= album.id %>"><%= album.name%></td>
       <td><%= button_to 'Edit', edit_album_path(album), method: 'get'%></td>
       <td><%= button_to 'Remove', album_path(album), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      <td>-----</td>
+      <td><button id="<%= "verde" << (album.id) %>"><i class="fas fa-check-circle"></i></i></button></td>
+      <td><button id="<%= "vermelho" << (album.id) %>"><i class="fas fa-times-circle"></i></button></td>
+      <td><button id="<%= "preto" << (album.id) %>"><i class="fas fa-undo"></i></button></td>
+      <script>
+        document.getElementById("<%= "verde" << (album.id) %>").addEventListener('click', function () {
+          document.getElementById("<%= album.id %>").style.color = 'green';
+        })
+
+        document.getElementById("<%= "vermelho" << (album.id) %>").addEventListener('click', function () {
+            document.getElementById("<%= album.id %>").style.color = 'red';
+        })
+
+        document.getElementById("<%= "preto" << (album.id) %>").addEventListener('click', function () {
+            document.getElementById("<%= album.id %>").style.color = 'black';
+        })
+      </script>
   <% end %>
 </table>
 <%= link_to "Add a New Album", new_album_path %>
