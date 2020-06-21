@@ -2,8 +2,23 @@
   <% @musics.each do |music| %>
     <tr>
       <td><%= link_to music.name, music_path(music) %></td>
+      <td></td>
+      <td></td>
+      <td id="<%= music.id %>", class="fa"></td>
+      <td></td>
+      <td></td>
       <td><%= button_to 'Edit', edit_music_path(music), method: 'get'%></td>
       <td><%= button_to 'Remove', music_path(music), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+      <td><button id="<%= "like" << (music.id) %>"><i class="fas fa-thumbs-up"></i></button></td>
+      <td><button id="<%= "dislike" << (music.id) %>"><i class="fas fa-thumbs-down"></i></button></td>
+      <script>
+        document.getElementById("<%= "like" << (music.id) %>").addEventListener('click', function () {
+          document.getElementById("<%= music.id %>").innerHTML = "&#xf004;"
+          });
+        document.getElementById("<%= "dislike" << (music.id) %>").addEventListener('click', function () {
+          document.getElementById("<%= music.id %>").innerHTML = "&#xf7a9;"
+          });
+      </script>
   <% end %>
 </table>
 <%= link_to "Add a music", new_music_path %>
